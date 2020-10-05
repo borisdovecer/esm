@@ -70,7 +70,7 @@ var RevSlider = function() {
                     },
                     responsiveLevels:[2220,1183,975,750],
                     gridwidth:[1140,991,767,425],
-                    gridheight: [828,810,710,610],
+                    gridheight: [500,810,710,610],
                     lazyType: "smart",
                     parallax: {
                         type: "scroll",
@@ -170,7 +170,7 @@ var RevSlider = function() {
                     },
                     responsiveLevels:[2220,1183,975,750],
                     gridwidth:[1140,991,767,425],
-                    gridheight: [828,810,750,650],
+                    gridheight: [500,810,750,650],
                     lazyType: "smart",
                     parallax: {
                         type: "scroll",

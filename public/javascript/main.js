@@ -150,7 +150,7 @@
     var googleMap = function () {
         // gmap default
         if ($().gmap3) {
-            var data = JSON.parse('[{"address":"Westwell Leacon, Ashford, Vương Quốc Anh","content":""}]');
+            var data = JSON.parse('[{"address":"Sremska Mitrovica, Rumski Drum 79","content":""}]');
             $(".flat-map")
             .gmap3({
                 map: {
