@@ -1088,27 +1088,27 @@
     }
 
     .flat-team .post .featured-post .social li a:hover {
-        color: #ff4f01;
+        color: #fff;
     }
 
     .flat-team .post .featured-post .social li.active a {
-        color: #ff4f01;
+        color: #fff;
     }
 
     .flat-team .post .content-post span {
         font-family: Roboto Condensed;
         font-size: 20px;
         line-height: 26px;
-        color: #131d3b;
+        color: #fff;
         margin-top: 14px;
         display: inline-block;
     }
 
     .flat-team .post .content-post p {
-        font-family: Roboto Condensed;
+        font-family: Ubuntu Condensed;
         font-size: 12px;
         line-height: 26px;
-        color: #666d81;
+        color: #fff;
         padding-bottom: 11px;
         position: relative;
         letter-spacing: 2.3px;
@@ -1116,7 +1116,7 @@
 
     .flat-team .post .content-post span:hover,
     .flat-team .post .content-post p:hover {
-        color: #ff4f01;
+        color: #fff;
     }
 
     .flat-team .post .content-post p:before {

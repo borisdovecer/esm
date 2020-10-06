@@ -69,8 +69,8 @@
 	}
 
 	a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, caption, canvas, center, cite, code,
-	dd, del, details, dfn, dialog, div, dl, dt, em, embed, fieldset, figcaption, figure, form, footer, header, hgroup, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav,object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, tt, table, tbody, textarea, tfoot, thead, time, tr, th, td, u, ul, var, video  { 
-		font-family: Ubuntu, inherit;
+	dd, del, details, dfn, dialog, div, dl, dt, em, embed, fieldset, figcaption, figure, form, footer, header, hgroup, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav,object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, tt, table, tbody, textarea, tfoot, thead, time, tr, th, td, u, ul, var, video  {
+		font-family: Ubuntu;
 		font-size: 100%; 
 		font-weight: inherit; 
 		font-style: inherit; 
@@ -191,7 +191,7 @@
 	}
 
 	body {
-		font: 16px/30px "Ubuntu", sans-serif;
+		font: 16px/30px "Ubuntu";
 		font-weight: 400;
 		background-color: #fefefe;
 		color: #666d81;
@@ -391,6 +391,22 @@
 		align-items: center;
 		padding-top: 30px;
 		padding-bottom: 30px;
+	}
+
+	.white {
+		color: #fcfcfc;
+	}
+	.white a {
+		color: #fafafa
+	}
+
+	.white h2 {
+		color: #fcfcfc
+	}
+
+	.dots ul li {
+		list-style: disc;
+		margin-left: 15px;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -769,7 +785,7 @@
 	}
 
 	header.style1 .header-button h3 a {
-		font-family: Ubuntu Condensed;
+		font-family: Ubuntu;
 		font-size: 18px;
 		line-height: unset;
 		font-weight: 700;
@@ -1646,7 +1662,7 @@
 	}
 
 	.main-blog-single .post .content-post h2 a:hover {
-		color: #ff4f01;
+		color: #fff;
 	}
 
 	.title1 h1 {
@@ -1663,12 +1679,16 @@
 	}
 
 	.main-blog-single .post .content-post p {
-		font-family: Ubuntu Condensed;
-		font-size: 20px;
+		font-family: Ubuntu ;
+		font-size: 16px;
 		line-height: 30px;
 		font-weight: 400;
 		color: #666d81;
 		margin-top: 30px;
+	}
+
+	.darkbluehover a:hover {
+		color: #131d3b;
 	}
 
 	.main-blog-single .blockquote-wrap {
@@ -4255,7 +4275,7 @@
 	    width: 100%;
 	    margin-top: 3px;
 	    text-align: center;
-	    font-family: Ubuntu Condensed;
+	    font-family: Ubuntu;
 	    font-size: 18px;
 	    line-height: auto;
 	    font-weight: 700;
