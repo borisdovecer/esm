@@ -174,7 +174,7 @@
                     values: [{
                         address: val.address,
                         options: {
-                            icon: "./image/contact/icon-map.png"
+                            icon: "./image/icon-map.png"
                         }
                         
                     }]
