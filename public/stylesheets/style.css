@@ -618,11 +618,11 @@
 
 	/* header-style1*/
 	header.style1 .header-wrap {
-		height: 78px;
-		background-color: #ff4f01;
+		height: 100px;
+		border-bottom: 5px solid #00438a;
+		background-color: #ffffff;
 		border-radius: 4px;
 		position: absolute;
-	    bottom: -38px;
 	    margin-bottom: 0;
 	    width: 100%;
 	    left: 0;
@@ -635,7 +635,8 @@
 	}
 
 	header.style1 .nav-wrap {
-		float: left;
+		padding-top: 10px;
+		float: right;
 		display: table-cell;
 	}
 
@@ -669,7 +670,7 @@
 	    font-family: Quicksand Condensed;
 	    font-size: 20px;
 	    font-weight: 400;
-	    color: #ffdccd;
+	    color: #666d81;
 	} 
 
 	header.header-style2 #mainnav > ul.menu > li > a,
@@ -683,7 +684,7 @@
 	}
 
 	header.style1 #mainnav ul.menu > li > a:hover {
-		color: #fff;
+		color: #24448a;
 	}
 
 	header.style1 .nav-wrap #mainnav > ul > li.active > a {
@@ -4384,7 +4385,6 @@
 
 	header.fixed-header {
 		position: fixed;
-		border-bottom: 5px solid #00438a;
 		width: 100%;
 		top: 0;
 		z-index: 3;
@@ -4495,7 +4495,7 @@
 	.mobile-button:before,
 	.mobile-button:after,
 	.mobile-button span {
-	    background-color:#fff;
+	    background-color:#24448a;
 	    -webkit-transition:all ease 0.3s;
 	    -moz-transition:all ease 0.3s;
 	    transition:all ease 0.3s;
@@ -4598,6 +4598,7 @@
 	}
 
 	#mainnav-mobi ul {
+		font-size: 14px;
 	    display: block;
 	    list-style: none;
 	    margin: 0;
@@ -4605,7 +4606,7 @@
 	}
 
 	#mainnav-mobi ul li {
-	    margin:0;
+	    margin-bottom: -18px;
 	    position: relative;
 	    text-align: left;
 	    border-top: 1px solid #333333;
@@ -4615,7 +4616,7 @@
 
 	#mainnav-mobi ul > li > a {
 	    text-decoration: none;
-	    height: 50px;
+	    height: 30px;
 	    line-height: 45px;
 	    padding: 0 15px;
 	    color: #fff;
