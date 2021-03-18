@@ -11,12 +11,12 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 text-center title1">
-                <h1 style="padding-bottom: 30px">Contact us</h1>
-                <p>Let’s <strong>schedule a call</strong> and talk about your strut & support manufacturing needs.</br>
-                    Feel free to choose who to contact from our team, depending on your questions and solutions needed.
-                </p>
+                <h1 style="padding-bottom: 30px"><%= __('contact.title') %></h1>
+                <h2><%- __('contact.subtitle') %>
+                </h2>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-12">
+            <% if(data){ data.forEach( contact => {%>
+            <div class="col-lg-3 col-md-3 col-sm-12">
                 <div class="sidebar-info">
                     <div class="content-box" style="padding-top: 50px">
                         <div class="widget_text widget widget_custom_html">
@@ -25,72 +25,28 @@
                                     <ul>
                                         <li>
                                             <div class="info-content darkbluehover" style="height: 160px">
-                                                <h2>Managing Director</h2>
-                                                <p><img src="/image/materials/ContactIcon.png" style="max-width: 40px">Tom de Boer</p>
+                                                <h2 class="title"><%= contact.title %></h2>
+                                                <p><img src="/image/materials/ContactIcon.png" style="max-width: 40px"><%= contact.name %></p>
+                                                <% if(contact.phone1) { %>
                                                 <p><img src="/image/materials/phoneicon.png" style="max-width: 40px">
-                                                    <a href="tel:+31 653311566">+31 653311566</a> /NL
+                                                    <a href="tel:<%= contact.phone1 %>"><%= contact.phone1 %></a>
                                                 </p>
-                                                <p style="padding-left: 45px">
-                                                    <a href="tel:+381 666544433">+381 (0)666544433</a> /SRB
-                                                </p>
-                                                <p><img src="/image/materials/emailicon.png" style="max-width: 40px">
-                                                    <a href="mailto:tdb@todebodoo.rs">tdb@todebodoo.rs</a>
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="info-content darkbluehover" style="height: 160px">
-                                                <h5 class="title">Dutch Serbian Business Organization</h5>
-                                                <p><img src="/image/materials/ContactIcon.png" style="max-width: 40px">Maja Peric</p>
+                                                    <%}%>
+                                                <% if(contact.phone2) { %>
                                                 <p><img src="/image/materials/phoneicon.png" style="max-width: 40px">
-                                                    <a href="tel:+381646401935">+381 (0)646401935</a>
+                                                    <a href="tel:<%= contact.phone2 %>"><%= contact.phone2 %></a>
                                                 </p>
+                                                <%}%>
+                                                <% if(contact.email1) { %>
                                                 <p><img src="/image/materials/emailicon.png" style="max-width: 40px">
-                                                    <a href="mailto:maja.peric@dutchserbianbusiness.org">maja.peric@dutchserbianbusiness.org</a>
+                                                    <a href="mailto:<%= contact.email1%>"><%= contact.email1%></a>
                                                 </p>
-
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12">
-                <div class="sidebar-info">
-                    <div class="content-box" style="padding-top: 50px">
-                        <div class="widget_text widget widget_custom_html">
-                            <div class="textwidget custom-html-widget">
-                                <div class="flat-widget_text">
-                                    <ul>
-                                        <li>
-                                            <div class="info-content darkbluehover" style="height: 160px">
-                                                <h2>Finance & IMS Manager</h2>
-                                                <p><img src="/image/materials/ContactIcon.png" style="max-width: 40px">Maja Perić</p>
-                                                <p><img src="/image/materials/phoneicon.png" style="max-width: 40px">
-                                                    <a href="tel:+381646401935">+381 (0)646401935</a>
-                                                </p>
+                                                    <% } %>
+                                                <% if(contact.email2) { %>
                                                 <p><img src="/image/materials/emailicon.png" style="max-width: 40px">
-                                                    <a href="mailto:maja.peric@todebodoo.rs">maja.peric@todebodoo.rs</a>
+                                                    <a href="mailto:<%= contact.email2%>"><%= contact.email2%></a>
                                                 </p>
-                                                </br>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="info-content darkbluehover" style="height: 160px">
-                                                <h5 class="title">Product Manager</h5>
-                                                <p><img src="/image/materials/ContactIcon.png" style="max-width: 40px">Milan Stepančević</p>
-                                                <p><img src="/image/materials/phoneicon.png" style="max-width: 40px">
-                                                    <a href="tel:+381 22671543">+381 (0)22671543</a>
-                                                </p>
-                                                <p><img src="/image/materials/emailicon.png" style="max-width: 40px">
-                                                    <a href="mailto:milan.stepancevic@todebodoo.rs">milan.stepancevic@todebodoo.rs</a>
-                                                </p>
-                                                <p style="padding-left: 45px">
-                                                    <a href="mailto:logistics@todebodoo.rs">logistics@todebodoo.rs</a>
-                                                </p>
+                                                <%}%>
                                             </div>
                                         </li>
                                     </ul>
@@ -100,48 +56,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-12">
-                <div class="sidebar-info">
-                    <div class="content-box" style="padding-top: 50px" >
-                        <div class="widget_text widget widget_custom_html">
-                            <div class="textwidget custom-html-widget">
-                                <div class="flat-widget_text darkbluehover">
-                                    <ul>
-                                        <li>
-                                            <div class="info-content" style="height: 160px">
-                                                <h2>International Sales Agent</h2>
-                                                <p><img src="/image/materials/ContactIcon.png" style="max-width: 40px">Gelein Melis</p>
-                                                <p><img src="/image/materials/phoneicon.png" style="max-width: 40px">
-                                                    <a href="tel:+31 111 407 280">+31 111 407 280</a>
-                                                </p>
-                                                <p><img src="/image/materials/emailicon.png" style="max-width: 40px">
-                                                    <a href="mailto:todebo@christopherconsulting.nl">todebo@christopherconsulting.nl</a>
-                                                </p>
-                                                </br>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="info-content darkbluehover" style="height: 160px">
-                                                <h5 class="title">Finance & administration</h5>
-                                                <p><img src="/image/materials/ContactIcon.png" style="max-width: 40px">Marina Pelić</p>
-                                                <p><img src="/image/materials/phoneicon.png" style="max-width: 40px">
-                                                    <a href="tel:381 22 671 346">+381 22 671346</a>
-                                                </p>
-                                                <p><img src="/image/materials/emailicon.png" style="max-width: 40px">
-                                                    <a href="mailto:office@todebodoo.rs">office@todebodoo.rs</a>
-                                                </p>
-                                                <p style="padding-left: 45px">
-                                                    <a href="mailto:finance@todebodoo.rs">finance@todebodoo.rs</a>
-                                                </p>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <% })} %>
         </div>
     </div>
     </section>
@@ -150,7 +65,7 @@
     <div class="row" style="margin-right: 0px;">
         <div class="col-lg-12">
             <div class="title-section style1">
-                <h2 style="color: #fff">Our location</h2>
+                <h2 style="color: #fff"><%= __('contact.location') %></h2>
             </div>
         </div>
     </div>
@@ -159,7 +74,7 @@
 
 <% include partials/footer.ejs %>
 
-<div id="scroll-top"><i class="fa fa-angle-up"></i></div>
+<div id="scroll-top">▲</div>
 
 <% include partials/footerscripts.ejs %>
 <script src="/javascript/gmap3.min.js"></script>

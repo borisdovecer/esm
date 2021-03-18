@@ -5,7 +5,7 @@
                 <div class="col-lg-12">
                     <div class="header-wrap">
                         <div class="col-lg-3 col-md-3 ">
-                            <a id="logo" href="/"><img src="/image/ESMHeaderLogo.png" alt="ESM" data-retina="/image/ESMHeaderLogo.png" style="max-width: 70%" data-width="250" data-height="36"></a>
+                            <a id="logo" href="/<%= __('ln') %>"><img src="/image/ESMHeaderLogo.jpg" alt="ESM" data-retina="/image/ESMHeaderLogo.jpg" style="height: 85px; padding-top: 15px" data-width="250" data-height="36"></a>
 
                         </div>
                         <div class="col-lg-9 col-md-9 ">
@@ -16,31 +16,68 @@
                                 <nav id="mainnav" class="mainnav">
                                     <ul class="menu">
                                         <li>
-                                            <a href="/" title="">Home</a>
+                                            <a href="/<%= __('ln') %>" title=""><%= __('header_home') %></a>
                                         </li>
                                         <li>
-                                            <a href="/about-us" title="">About us</a>
+                                            <a href="/about-us<%= __('ln') %>" title=""><%= __('header_about') %></a>
+                                        </li>
+                                        <% if ( __('ln') !== "?ln=de") {%>
+                                        <li>
+                                            <a href="/news<%= __('ln') %>" title=""><%= __('header_news') %></a>
                                         </li>
                                         <li>
-                                            <a href="/news" title="">News</a>
-                                        </li>
-                                        <li>
-                                            <a href="/production" title="">Production <i class="fa fa-caret-down"></i></a>
+                                            <a href="/production<%= __('ln') %>" title=""><%= __('header_production') %><i class="fa fa-caret-down"></i></a>
                                             <ul class="sub-menu">
-                                                <li><a href="/strut-support-systems" title="">Strut Support Systems</a></li>
-                                                <li><a href="/instrument-support" title="">Instrument supports</a></li>
-                                                <li><a href="/modules-and-framing" title="">Modules & Framing</a></li>
-                                                <li><a href="/stairways-and-platforms" title="">Stairway & Platforms</a></li>
-                                                <li><a href="/surface-treatment" title="">Surface treatment </a></li>
-                                                <li><a href="/pdf/ESM PRODUCT CATALOG compressed.pdf" title="">NEW CATALOG 2020</a></li>
+                                                <% if(prodItems) { prodItems.forEach( prod => {%>
+                                                    <li><a href="/production/<%= prod.slug %><%= __('ln') %>" title=""><%= prod.short_title %></a></li>
+                                                <% })} %>
+                                                <li><a href="/pdf/ESM PRODUCT CATALOG.pdf" title="">NEW CATALOG 2020</a></li>
                                             </ul><!-- /.sub-menu -->
                                         </li>
+                                            <li>
+                                                <a href="/products<%= __('ln') %>" title=""><%= __('header_products') %></a>
+                                            </li>
+                                        <% } %>
+
+
+                                        <% if(__('header_hseq') !== "" ){%>
                                         <li>
-                                            <a href="/hseq" title="">HSEQ</a>
+                                            <a href="/hseq<%= __('ln') %>" title=""><%= __('header_hseq') %></a>
                                         </li>
+                                        <% } else { %>
+                                            <li>
+                                                <a href="/comingsoon<%= __('ln') %>" title=""><%= __('header_products') %></a>
+                                            </li>
+                                            <li>
+                                                <a href="/comingsoon<%= __('ln') %>" title=""><%= __('header_production') %><i class="fa fa-caret-down"></i></a>
+                                                <ul class="sub-menu">
+<!--                                                    <% if(prodItems) { prodItems.forEach( prod => {%>-->
+<!--                                                        <li><a href="/production/<%= prod.slug %><%= __('ln') %>" title=""><%= prod.short_title %></a></li>-->
+<!--                                                    <% })} %>-->
+                                                    <li><a href="/pdf/ESM PRODUCT CATALOG.pdf" title="">NEW CATALOG 2020</a></li>
+                                                </ul><!-- /.sub-menu -->
+                                            </li>
+                                            <li>
+                                                <a href="/comingsoon<%= __('ln') %>" title="">HSEQ</a>
+                                            </li>
+                                            <li>
+                                                <a href="/comingsoon<%= __('ln') %>" title=""><%= __('header_news') %></a>
+                                            </li>
+                                            <% } %>
                                         <li>
-                                            <a href="/contact" title="">Contact us</a>
+                                            <a href="/contact<%= __('ln') %>" title=""><%= __('header_contact') %></a>
                                         </li>
+
+                                        <li style="margin-right: 0px">
+                                            <a href="/" title="">
+                                                <img style="max-width: 35px" src="/image/en-flag.png" alt="ESM">
+                                            </a>
+                                            <a href="?ln=de">
+                                                <img  style="max-width: 35px" src="/image/de-flag.png" alt="ESM">
+                                            </a>
+                                        </li>
+
+
                                     </ul>
                                 </nav>
                             </div><!-- /.nav-wrap -->

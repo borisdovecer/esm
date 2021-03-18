@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../partials/head.ejs%>
+    <script src="https://cdn.ckeditor.com/4.14.0/full/ckeditor.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/smoothness/jquery-ui.css" media="all">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+    <script>
+        $(function() {
+            $('#datepick').datepicker();
+        });
+    </script>
+</head>
+<body>
+
+<% include ../partials/header2.ejs %>
+<div class="main-blog-single" style="padding-top: 50px">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-12">
+                <% include sidebar.ejs %>
+            </div>
+
+            <div class="col-lg-10 col-md-10 col-sm-12">
+                <h1>Update</h1>
+                <a href="/admin/downloads" class="download hvr-shutter-out-verticall contactbtn" style="line-height: 45px">List</a>
+
+                <form  ref='uploadForm'
+                       id='uploadForm'
+                       class="comment-form"
+                       action="/admin/downloads/update/<%= data[0]._id %>"
+                       method="post"
+                       encType="multipart/form-data"
+                >
+                    <% if(data){%>
+                        <p class="comment-form-input">
+                            <label>Title</label>
+                            <input  name="title" type="text" placeholder="Title" value="<%= data[0].title%>" required="required">
+                        </p>
+                        <p class="comment-form-input">
+                            <label>Lang</label>
+                            <select name="lang">
+                                <option value="<%= data[0].lang %>"><%= data[0].lang %></option>
+                                <option value="en">en</option>
+                                <option value="rs">de</option>
+                                <option value="">None</option>
+                            </select>
+                        </p>
+                        <p class="comment-form-input">
+                            <label>Category</label>
+                            <select name="category">
+                                <option value="<%= data[0].category %>"><%= data[0].category %></option>
+                                <option value="document">Documents</option>
+                                <option value="certificates">Certificates</option>
+                                <option value="catalog">Catalog</option>
+                            </select>
+                        </p>
+                        <p class="comment-form-input">
+                            <label>PDF: </label>
+                            <input type="text" name="pdf" value="<%= data[0].filename %>">
+                            <label>New pdf?</label>
+                            <input type="file" name="pdff" id="pdff">
+                        </p>
+                    <% } %>
+                    <p class="submit-form">
+                        <button name="submit" type="submit"  class="submit hvr-shutter-out-verticall" >Submit</button>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer.ejs %>
+
+<div id="scroll-top"><i class="fa fa-angle-up"></i></div>
+<% include ../partials/footerscripts.ejs %>
+<script >
+    $(document).ready(function() {
+        $("#input-5").fileinput({showCaption: false});
+
+        $("#input-6").fileinput({
+            showUpload: false,
+            maxFileCount: 10,
+            mainClass: "input-group-lg",
+            showCaption: true
+        });
+
+        $("#input-8").fileinput({
+            mainClass: "input-group-md",
+            showUpload: true,
+            previewFileType: "image",
+            browseClass: "btn btn-success",
+            browseLabel: "Pick Image",
+            browseIcon: "<i class=\"icon-picture\"></i> ",
+            removeClass: "btn btn-danger",
+            removeLabel: "Delete",
+            removeIcon: "<i class=\"icon-trash\"></i> ",
+            uploadClass: "btn btn-info",
+            uploadLabel: "Upload",
+            uploadIcon: "<i class=\"icon-upload\"></i> "
+        });
+
+        $("#input-9").fileinput({
+            previewFileType: "text",
+            allowedFileExtensions: ["txt", "md", "ini", "text"],
+            previewClass: "bg-warning",
+            browseClass: "btn btn-primary",
+            removeClass: "btn btn-secondary",
+            uploadClass: "btn btn-secondary",
+        });
+
+        $("#input-10").fileinput({
+            showUpload: false,
+            layoutTemplates: {
+                main1: "{preview}\n" +
+                    "<div class=\'input-group {class}\'>\n" +
+                    "   <div class=\'input-group-append\'>\n" +
+                    "       {browse}\n" +
+                    "       {upload}\n" +
+                    "       {remove}\n" +
+                    "   </div>\n" +
+                    "   {caption}\n" +
+                    "</div>"
+            }
+        });
+
+        $("#input-11").fileinput({
+            maxFileCount: 10,
+            allowedFileTypes: ["image", "video"]
+        });
+
+        $("#input-12").fileinput({
+            showPreview: false,
+            allowedFileExtensions: ["zip", "rar", "gz", "tgz"],
+            elErrorContainer: "#errorBlock"
+        });
+    });
+
+</script>
+</body>
+</html>

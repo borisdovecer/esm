@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include partials/head.ejs%>
+</head>
+<body>
+
+<% include partials/header2.ejs %>
+<section class="flat-team">
+    <div class="container-fluid text-center">
+        <div class="row">
+            <% if(data) { data.forEach( prod => {%>
+                <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                    <article class="post">
+                        <div class="featured-post img-hover">
+                            <img src="image/products/<%= prod.image %>" style="width: 220px; height: auto" alt="One of the strut support products we manufacture">
+                            <div class="social white">
+                                <h2><%= prod.title %></h2>
+                                <a href="/products/<%= prod.slug %><%= __('ln') %>">Read more</a>
+                            </div>
+                        </div>
+                        <div class="content-post" style="height: 70px">
+                            <span><%= prod.title %></span>
+                        </div>
+                    </article>
+                </div>
+            <% } ) }%>
+
+        </div>
+    </div>
+</section>
+<% include partials/footer.ejs %>
+
+<div id="scroll-top">▲</div>
+<% include partials/footerscripts.ejs %>
+</body>
+</html>

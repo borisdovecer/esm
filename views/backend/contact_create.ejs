@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../partials/head.ejs%>
+</head>
+<body>
+
+<% include ../partials/header2.ejs %>
+<div class="main-blog-single" style="padding-top: 50px">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-12">
+                <% include sidebar.ejs %>
+            </div>
+
+            <div class="col-lg-10 col-md-10 col-sm-12">
+                <h1>Create</h1>
+                <a href="/admin/contact" class="download hvr-shutter-out-verticall contactbtn" style="line-height: 45px">List</a>
+
+                <form  class="comment-form"
+                       action="/admin/contact/create"
+                       method="post"
+                >
+                    <p class="comment-form-input">
+                        <label>Title</label>
+                        <input  name="title" type="text" placeholder="Title" required="required">
+                    </p>
+                    <p class="comment-form-input">
+                        <label>Name</label>
+                        <input  name="name" type="text" placeholder="Name" required="required">
+                    </p>
+                    <p class="comment-form-input">
+                        <label>Phone 1</label>
+                        <input  name="phone1" type="text" placeholder="Phone 1">
+                    </p>
+                    <p class="comment-form-input">
+                        <label>Phone 2</label>
+                        <input  name="phone2" type="text" placeholder="Phone 2">
+                    </p>
+                    <p class="comment-form-input">
+                        <label>Email 1</label>
+                        <input  name="email1" type="text" placeholder="Email 1" >
+                    </p>
+                    <p class="comment-form-input">
+                        <label>Email 2</label>
+                        <input  name="email2" type="text" placeholder="Email 2">
+                    </p>
+                    <p class="submit-form">
+                        <button name="submit" type="submit"  class="submit hvr-shutter-out-verticall" >Submit</button>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer.ejs %>
+
+<div id="scroll-top"><i class="fa fa-angle-up"></i></div>
+<% include ../partials/footerscripts.ejs %>
+
+</body>
+</html>

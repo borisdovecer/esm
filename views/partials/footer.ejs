@@ -3,28 +3,28 @@
         <div class="row">
             <div class="footer">
                 <div class="col-lg-12">
-                    <div class="widget widget-links widget-menu">
+                    <div class="widget widget-links widget-menu" style="margin-left: 80px;margin-right: -80px; margin-top: 45px">
                         <div class="widget-img padding">
                             <img src="/image/ESMFooterLogo.png" alt="image" style="max-width: 50%">
                         </div>
                     </div>
                     <div class="widget widget-links widget-menu">
-                        <h2>Download</h2>
+                        <h2><%= __('download') %></h2>
                         <ul>
-                            <li><a href="/company-downloads">> Company downloads</a></li>
-                            <li><a href="/company-certificates">> Company Certificates</a></li>
-                            <li><a href="/pdf/DISCLAIMER.pdf">> Disclaimer </a></li>
-                            <li>> NEW CATALOG 2020 (<a href="/pdf/ESM PRODUCT CATALOG compressed.pdf">pdf</a>, flip book)</li>
+                            <li><a href="/company-downloads<%= __('ln') %>">> <%= __('company_downloads') %></a></li>
+                            <li><a href="/company-certificates<%= __('ln') %>">> <%= __('company_certificates') %></a></li>
+                            <li><a href="/pdf/ESMDisclaimerMemorandum.pdf">> <%= __('disclaimer') %> </a></li>
+                            <li>> <%= __('catalogue') %> (<a href="/pdf/ESM PRODUCT CATALOG.pdf">pdf</a>, <a href="https://www.yumpu.com/en/document/read/64681532/esm-product-flip-catalogue">flip book</a>)</li>
                         </ul>
                     </div>
                     <div class="widget widget-links widget-menu">
-                        <h2>Contact</h2>
+                        <h2><%= __('footer_contact') %></h2>
                         <ul>
-                            <li>Address: 22000 Sremska Mitrovica,
+                            <li><%= __('footer_address') %>: 22000 Sremska Mitrovica,
                                 Rumski Drum 79</li>
-                            <li>Phone: <a href="tel:+381 22 671 543">+381(0)22 671 543</a> </li>
-                            <li>E-mail: <a href="mailto:office@todebodoo.rs">office@todebodoo.rs</a> </li>
-                            <li>Web:  <a href="www.esm.rs">www.esm.rs</a> </li>
+                            <li><%= __('footer_phone') %>: <a href="tel:+381 22 671 543">+381(0)22 671 543</a> </li>
+                            <li>E-mail: <a href="mailto:office@esm.rs">office@esm.rs</a> </li>
+                            <li>Web:  <a href="http://www.esm.rs">www.esm.rs</a> </li>
                         </ul>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
             <div class="bottom-footer">
                 <div class="col-lg-12">
                     <div class="bottom-inner">
-                        <p>© Copyright 2020 by <a href="#">ESM</a></p>
+                        <p>© Copyright 2020 by <a href="/">ESM</a></p>
                     </div>
                 </div>
             </div>

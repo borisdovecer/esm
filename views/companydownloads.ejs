@@ -7,76 +7,47 @@
 
 <% include partials/header2.ejs %>
 <div class="main-blog-single">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 text-center title1">
-                    <h1>Company documents</h1>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-12">
-                    <div class="sidebar-wrap sidebar">
+    <div class="row" style="margin-left: 0px; margin-right: 0px">
+        <div class="col-lg-12 col-md-12 col-sm-12 text-center title1 marg">
+            <h1>Company documents</h1>
+        </div>
+        <div class="col-lg-12 col-md-12 col-lg-offset-1 col-md-offset-1 col-sm-12 title1 marg">
+            <h2>Documents in English</h2>
+        </div>
 
-                        <div class="spacer" data-desktop_height="30" data-mobile_height="30" data-smobile_height="30"></div>
-                        <div class="widget widget-text">
-                            <a href="/pdf/General-Terms-Todebo-doo-English.pdf" class="download hvr-shutter-out-verticall" >Terms of business</a>
-                        </div>
-                        <div class="spacer" data-desktop_height="8" data-mobile_height="8" data-smobile_height="8"></div>
-                        <div class="widget widget-text">
-                            <a href="#" class="download bg-green hvr-shutter-out-vertical" >Tax ind. nr. (English)</a>
-                        </div>
-
-                    </div>
-                    <div class="spacer" data-desktop_height="0" data-mobile_height="50" data-smobile_height="0"></div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-12">
-                    <div class="sidebar-wrap sidebar">
-
-                        <div class="spacer" data-desktop_height="30" data-mobile_height="30" data-smobile_height="30"></div>
-                        <div class="widget widget-text">
-                            <a href="/pdf/Todebo-ID_Eng_Definitief.pdf" class="download hvr-shutter-out-verticall" >Company profile</a>
-                        </div>
-                        <div class="spacer" data-desktop_height="8" data-mobile_height="8" data-smobile_height="8"></div>
-                        <div class="widget widget-text">
-                            <a href="/pdf/APRPDV-registracija.pdf" class="download bg-green hvr-shutter-out-vertical" >APR (srpski)</a>
-                        </div>
-
-                    </div>
-                    <div class="spacer" data-desktop_height="0" data-mobile_height="50" data-smobile_height="0"></div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-12">
-                    <div class="sidebar-wrap sidebar">
-
-                        <div class="spacer" data-desktop_height="30" data-mobile_height="30" data-smobile_height="30"></div>
-                        <div class="widget widget-text">
-                            <a href="#" class="download hvr-shutter-out-verticall" style="line-height: 40px" >Registration Chamber of Commerce (English)</a>
-                        </div>
-                        <div class="spacer" data-desktop_height="8" data-mobile_height="8" data-smobile_height="8"></div>
-                        <div class="widget widget-text">
-                            <a href="#" class="download bg-green hvr-shutter-out-vertical" >Politika IMS-a</a>
-                        </div>
-
-                    </div>
-                    <div class="spacer" data-desktop_height="0" data-mobile_height="50" data-smobile_height="0"></div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-12">
-                    <div class="sidebar-wrap sidebar">
-
-                        <div class="spacer" data-desktop_height="30" data-mobile_height="30" data-smobile_height="30"></div>
-                        <div class="widget widget-text">
-                            <a href="#" class="download hvr-shutter-out-verticall" >Tax Certificate (English)</a>
-                        </div>
-                        <div class="spacer" data-desktop_height="8" data-mobile_height="8" data-smobile_height="8"></div>
+        <div class="col-lg-1 col-md-1"></div>
+        <% if(data) { data.forEach( dl => { %>
+            <div class="col-lg-2 col-md-2 col-sm-12 marg">
+            <div class="widget widget-text">
+                <a href="/pdf/<%= dl.filename %>" class="download hvr-shutter-out-verticall"  style="<%= dl.title.length > 25 ? "font-size: 14px" : "font-size: 16px"%>" ><%= dl.title %></a>
+            </div>
+        </div>
+        <% })} %>
 
 
-                    </div>
-                    <div class="spacer" data-desktop_height="0" data-mobile_height="50" data-smobile_height="0"></div>
+
+        <div class="col-lg-12 col-md-12 col-lg-offset-1 col-md-offset-1 col-sm-12 title1 marg" style="border-left:#131d3b solid 1px">
+            <h2>Documents in Serbian</h2>
+        </div>
+        <div class="col-lg-1 col-md-1"></div>
+
+        <% if(data2) { data2.forEach( dl => { %>
+
+            <div class="col-lg-2 col-md-2 col-sm-12 marg">
+            <div class="sidebar-wrap sidebar">
+                <div class="widget widget-text">
+                    <a href="/pdf/<%= dl.filename %>" class="download bg-green hvr-shutter-out-vertical" style="<%= dl.title.length > 25 ? "font-size: 14px" : "font-size: 16px"%>" ><%= dl.title %></a>
                 </div>
             </div>
         </div>
+        <% })} %>
+
+    </div>
 </div>
 
 <% include partials/footer.ejs %>
 
-<div id="scroll-top"><i class="fa fa-angle-up"></i></div>
+<div id="scroll-top">▲</div>
 <% include partials/footerscripts.ejs %>
 </body>
 </html>

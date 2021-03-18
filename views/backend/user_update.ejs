@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../partials/head.ejs%>
+    <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/smoothness/jquery-ui.css" media="all">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+
+</head>
+<body>
+
+<% include ../partials/header2.ejs %>
+<div class="main-blog-single" style="padding-top: 50px">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-12">
+                <% include sidebar.ejs %>
+            </div>
+
+            <div class="col-lg-10 col-md-10 col-sm-12">
+                <h1>Update</h1>
+                <a href="/admin/users" class="download hvr-shutter-out-verticall contactbtn" style="line-height: 45px">List</a>
+
+                <form  class="comment-form"
+                       action="/admin/users/update/<%= data[0]._id %>"
+                       method="post"
+                >
+                    <% if(data){%>
+                        <p class="comment-form-input">
+                            <label>Name</label>
+                            <input  name="name" type="text" placeholder="Name"  value="<%= data[0].name %>"  required="required">
+                        </p>
+
+                        <p class="comment-form-input">
+                            <label>Email</label>
+                            <input  name="email" type="text"  value="<%= data[0].email %>">
+                        </p>
+                        <p class="comment-form-input">
+                            <label>Role</label>
+                            <select name="role">
+                                <option value="<%= data[0].role %>"><%= data[0].role %></option>
+                                <option value="admin">admin</option>
+                                <option value="user">user</option>
+                            </select>
+                        </p>
+                    <% } %>
+                    <p class="submit-form">
+                        <button name="submit" type="submit"  class="submit hvr-shutter-out-verticall" >Submit</button>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer.ejs %>
+
+<div id="scroll-top"><i class="fa fa-angle-up"></i></div>
+<% include ../partials/footerscripts.ejs %>
+
+</body>
+</html>

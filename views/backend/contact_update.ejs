@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../partials/head.ejs%>
+    <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/smoothness/jquery-ui.css" media="all">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+
+</head>
+<body>
+
+<% include ../partials/header2.ejs %>
+<div class="main-blog-single" style="padding-top: 50px">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-12">
+                <% include sidebar.ejs %>
+            </div>
+
+            <div class="col-lg-10 col-md-10 col-sm-12">
+                <h1>Update</h1>
+                <a href="/admin/contact" class="download hvr-shutter-out-verticall contactbtn" style="line-height: 45px">List</a>
+
+                <form  class="comment-form"
+                       action="/admin/contact/update/<%= data[0]._id %>"
+                       method="post"
+                >
+                    <% if(data){%>
+                        <p class="comment-form-input">
+                            <label>Title</label>
+                            <input  name="title" type="text" placeholder="Title" value="<%= data[0].title%>" required="required">
+                        </p>
+                        <p class="comment-form-input">
+                            <label>Name</label>
+                            <input  name="name" type="text" placeholder="Name"  value="<%= data[0].name %>"  required="required">
+                        </p>
+                        <p class="comment-form-input">
+                            <label>Phone 1</label>
+                            <input  name="phone1" type="text" placeholder="Phone 1"  value="<%= data[0].phone1 %>">
+                        </p>
+                        <p class="comment-form-input">
+                            <label>Phone 2</label>
+                            <input  name="phone2" type="text" placeholder="Phone 2"  value="<%= data[0].phone2 %>">
+                        </p>
+                        <p class="comment-form-input">
+                            <label>Email 1</label>
+                            <input  name="email1" type="text"  value="<%= data[0].email1 %>">
+                        </p>
+                        <p class="comment-form-input">
+                            <label>Email 2</label>
+                            <input  name="email2" type="text" placeholder="email 2"  value="<%= data[0].email2 %>">
+                        </p>
+                    <% } %>
+                    <p class="submit-form">
+                        <button name="submit" type="submit"  class="submit hvr-shutter-out-verticall" >Submit</button>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer.ejs %>
+
+<div id="scroll-top"><i class="fa fa-angle-up"></i></div>
+<% include ../partials/footerscripts.ejs %>
+
+</body>
+</html>

@@ -9,170 +9,70 @@
 <div class="main-blog-post">
     <div class="container">
         <div class="row straight">
+            <% if(data){%>
+            <% data.forEach(function (news) { %>
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <article class="post post-wrap">
                     <div class="featured-post">
                         <div class="post-img">
-                            <a href="/news/post1">
-                                <img src="/image/materials/gangway.jpg" alt="image">
+                            <a href="/news/<%= news.slug %>">
+                                <% if(news.video) { %>
+                                <video style="width: 100%; height: 191px" controls>
+                                        <source src="/image/news/<%= news.video %>" type="video/mp4">
+                                </video>
+                                    <%} else {%>
+                                <img src="/image/news/<%= news.image %>" alt="esm" style="width:100%;height:200px;object-fit:scale-down;">
                                 <div class="overlay"></div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content-post">
-                        <div class="meta-post meta-post-shared">
-                            <ul>
-                                <li class="active">06 October, 2020</li>
-                            </ul>
-                        </div>
-                        <h3><a href="/news/post1">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet</a></h3>
-                        <p>Lorem ipsum is simply free text used by copytyping refreshing. Neque porro est qui dolorem ipsum quia quaed inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                        <h4 class="box-line"><a href="/news/post">READ MORE</a><span class="line"></span></h4>
-                    </div>
-                </article>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6">
-                <article class="post post-wrap">
-                    <div class="featured-post">
-                        <div class="post-img">
-                            <a href="/news/post1">
-                                <img src="/image/materials/gangway.jpg" alt="image">
-                                <div class="overlay"></div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content-post">
-                        <div class="meta-post meta-post-shared">
-                            <ul>
-                                <li class="active">06 October, 2020</li>
-                            </ul>
-                        </div>
-                        <h3><a href="/news/post1">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet</a></h3>
-                        <p>Lorem ipsum is simply free text used by copytyping refreshing. Neque porro est qui dolorem ipsum quia quaed inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                        <h4 class="box-line"><a href="/news/post">READ MORE</a><span class="line"></span></h4>
-                    </div>
-                </article>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6">
-                <article class="post post-wrap">
-                    <div class="featured-post">
-                        <div class="post-img">
-                            <a href="/news/post1">
-                                <img src="/image/materials/gangway.jpg" alt="image">
-                                <div class="overlay"></div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content-post">
-                        <div class="meta-post meta-post-shared">
-                            <ul>
-                                <li class="active">06 October, 2020</li>
-                            </ul>
-                        </div>
-                        <h3><a href="/news/post1">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet</a></h3>
-                        <p>Lorem ipsum is simply free text used by copytyping refreshing. Neque porro est qui dolorem ipsum quia quaed inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                        <h4 class="box-line"><a href="/news/post">READ MORE</a><span class="line"></span></h4>
-                    </div>
-                </article>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6">
-                <article class="post post-wrap">
-                    <div class="featured-post">
-                        <div class="post-img">
-                            <a href="/news/post1">
-                                <img src="/image/materials/gangway.jpg" alt="image">
-                                <div class="overlay"></div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content-post">
-                        <div class="meta-post meta-post-shared">
-                            <ul>
-                                <li class="active">06 October, 2020</li>
-                            </ul>
-                        </div>
-                        <h3><a href="/news/post1">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet</a></h3>
-                        <p>Lorem ipsum is simply free text used by copytyping refreshing. Neque porro est qui dolorem ipsum quia quaed inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                        <h4 class="box-line"><a href="/news/post">READ MORE</a><span class="line"></span></h4>
-                    </div>
-                </article>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6">
-                <article class="post post-wrap">
-                    <div class="featured-post">
-                        <div class="post-img">
-                            <a href="/news/post1">
-                                <img src="/image/materials/gangway.jpg" alt="image">
-                                <div class="overlay"></div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content-post">
-                        <div class="meta-post meta-post-shared">
-                            <ul>
-                                <li class="active">06 October, 2020</li>
-                            </ul>
-                        </div>
-                        <h3><a href="/news/post1">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet</a></h3>
-                        <p>Lorem ipsum is simply free text used by copytyping refreshing. Neque porro est qui dolorem ipsum quia quaed inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                        <h4 class="box-line"><a href="/news/post">READ MORE</a><span class="line"></span></h4>
-                    </div>
-                </article>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6">
-                <article class="post post-wrap">
-                    <div class="featured-post">
-                        <div class="post-img">
-                            <a href="/news/post1">
-                                <img src="/image/materials/gangway.jpg" alt="image">
-                                <div class="overlay"></div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content-post">
-                        <div class="meta-post meta-post-shared">
-                            <ul>
-                                <li class="active">06 October, 2020</li>
-                            </ul>
-                        </div>
-                        <h3><a href="/news/post1">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet</a></h3>
-                        <p>Lorem ipsum is simply free text used by copytyping refreshing. Neque porro est qui dolorem ipsum quia quaed inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                        <h4 class="box-line"><a href="/news/post">READ MORE</a><span class="line"></span></h4>
-                    </div>
-                </article>
-            </div>
+                                <% } %>
 
-            <div class="col-lg-12 col-md-12 col-sm-12">
-                <div class="blog-pagination">
-                    <ul>
-                        <li>
-                            <a href="#"><i class="fas fa-angle-left" aria-hidden="true"></i></a>
-                        </li>
-                        <li class="active">
-                            <a href="#">01</a>
-                        </li>
-                        <li>
-                            <a href="#">02</a>
-                        </li>
-                        <li>
-                            <a href="#">03</a>
-                        </li>
-                        <li>
-                            <a href="#">04</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fas fa-angle-right" aria-hidden="true"></i></a>
-                        </li>
-                    </ul>
-                </div>
+
+
+                            </a>
+                        </div>
+                    </div>
+                    <div class="content-post">
+                        <div class="meta-post">
+                            <ul>
+                                <li class="active"><%= moment(news.createdOn).format("DD MMMM YYYY");%></li>
+                            </ul>
+                        </div>
+                        <h3 style="height: 120px"><a href="/news/<%= news.slug %><%= __('ln') %>"><%= news.title %></a></h3>
+                        <p style="height: 180px"><%= news.description %></p>
+                        <h4 class="box-line"><a href="/news/<%= news.slug %>">READ MORE</a><span class="line"></span></h4>
+                    </div>
+                </article>
             </div>
+            <% })}%>
+                <div class="col-lg-12 col-md-12 col-sm-12 ">
+                    <div class="blog-pagination" >
+                        <ul>
+                            <% if(parseInt(current) !== 1) {    %>
+                                <a href="/news<%= __('ln') %><%= __('ln') ? "&" : "?" %>page=<%= parseInt(current) - 1%>">
+                                    <li> < </li>
+                                </a>
+                            <% } %>
+
+                            <% if(pages){ %>
+                                <% for( i=1; i<=pages; i++ ) { %>
+                                    <a href="/news<%= __('ln') %><%= __('ln') ? "&" : "?" %>page=<%= i %>">
+                                        <li class="<%= current === i ? "active" : "" %>"><%= i %></li>
+                                    </a>
+                            <% }} %>
+                            <% if(parseInt(current) !== pages) {    %>
+                                <a href="/news<%= __('ln') %><%= __('ln') ? "&" : "?" %>page=<%= parseInt(current) + 1%>">
+                                    <li> > </li>
+                                </a>
+                            <% } %>
+                        </ul>
+                    </div>
+                </div>
         </div>
     </div>
 </div>
 
 <% include partials/footer.ejs %>
 
-<div id="scroll-top"><i class="fa fa-angle-up"></i></div>
+<div id="scroll-top">▲</div>
 <% include partials/footerscripts.ejs %>
 </body>
 </html>

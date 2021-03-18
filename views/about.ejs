@@ -10,43 +10,13 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 text-center title1" style="padding-bottom: 30px">
-                <h1>About us</h1>
+                <h1><%= data[0].title %></h1>
             </div>
             <div class="col-lg-9 col-md-9 col-sm-12">
                 <div class="content-wrap" >
                     <article class="post">
                         <div class="content-post padding" >
-                            <h2 style="color: #00438a">2013: the start of our strut manufacturing story with Todebo.</h2>
-                            <p>
-                                After several successful projects and the conclusion of contracts with <strong>Dutch companies,</strong> also with the growing demands for stable suppliers from Eastern Europe with Western European business cultures, our company Todebo was established, with the <strong>strut manufacturing headquarters in Sremska Mitrovica</strong>, Serbia. The young and enthusiastic Todebo team built the credibility of the company, during this time Todebo gained more loyal customers for which our company provides various products. Our clients come from a range of different industries, including oil and shipbuilding.
-                            </p>
-                        </div>
-                        <div class="content-post padding">
-                            <h2>ESM today</h2>
-                            <p>
-                                The key to continued success is in our flexibility and open cooperation with our customers. We are constantly working together to find optimal solutions in order to fulfill all requirements in terms of support and fastening products product quality. The partners and suppliers network we have developed provides the ability to quickly and reliably deliver products. This ensures full client satisfaction. Through our previous work, we have developed several new groups of products, we have improved business operations, product quality, and standards and we have cooperated with a large number of <strong>Western European companies.</strong> Our goal is to continue these high standards in the future.
-                            </p>
-                            <p>
-                                Our <strong>expert team,</strong> as well as the standards that our company owns and successfully implements, allow us to make products that further help our customers to do their work as efficiently as possible.
-                            </p>
-                            <h2>ESM values</h2>
-                            <p>
-                                Product <strong>quality</strong> and <strong>safety</strong> of our employees are always present at the highest level.
-                                <strong>Respect for deadlines</strong> allows customers to increase their productivity, and <strong>transparency</strong> in the business operations allows us to rapidly build <strong>trust</strong> with our partners.
-                            </p>
-                            <h2 >ESM mission</h2>
-                            <p>
-                                From the beginning, ESM set for itself the goal of being a <strong>European leading manufacturer</strong> of Support and Fastening products.
-                                Through continuous improvement of our strut manufacturing and production processes, we remain competitive while maintaining high standards of <strong>European quality.</strong>
-                                ESM as a partner assists and supports the customer in his requirements to achieve the customer’s goal.
-                            </p>
-                            <h2>ESM history</h2>
-                                <p>2013: The founding of the company as Todebo.</p>
-                                <p>2015: At the beginning of 2015 Todebo introduced Network Attached Storage (NAS) – a system that allows business networking in order to exchange data between a large number of partners. With the aim of further increased productivity, in June 2015 Todebo invested in an ERP system. In October 2015, in the prestigious certification house, SGS Todebo introduced standards: ISO 9001, ISO 14001, and OHSAS 18001.</p>
-                                <p>2016: Due to the expansion of the workload, Todebo has rented additional workspace within an existing production facility.</p>
-                                <p>2017: Moved to a new location.</p>
-                                <p>2018: ISO 3834-2 and EN 1090-2 are implemented in management and quality systems.</p>
-                                <p>2020: Todebo changes its name to <strong>European Strut & Support Manufacturer,</strong> also known as ESM.</p>
+                            <%- data[0].content_text %>
                         </div>
                     </article>
 
@@ -79,7 +49,7 @@
 
 <% include partials/footer.ejs %>
 
-<div id="scroll-top"><i class="fa fa-angle-up"></i></div>
+<div id="scroll-top">▲</div>
 <% include partials/footerscripts.ejs %>
 </body>
 </html>

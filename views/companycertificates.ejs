@@ -17,75 +17,40 @@
                 </p>
                 <p>With the next company audit our certifications will be issued under the ESM brand.</p>
             </div>
+        </div>
+        <div className="row " style="display: flex; justify-content: center" >
 
+        <% if(data) { data.slice(0,4).forEach( dl => { %>
 
-            <div class="col-lg-offset-2 col-md-offset-2  col-lg-3 col-md-3 hidden-xs hidden-sm" style="margin-left: 12%">
+            <div class="col-lg-3 col-md-3 col-sm-12 marg ">
                 <div class="sidebar-wrap sidebar">
-
-                    <div class="spacer" data-desktop_height="30" data-mobile_height="30" data-smobile_height="30"></div>
                     <div class="widget widget-text">
-                        <a href="/pdf/Todebo-QMS-en.pdf" class="download hvr-shutter-out-verticall" >ISO 9001:2015</a>
+                        <a href="/pdf/<%= dl.filename %>" class="download hvr-shutter-out-verticall"  style="<%= dl.title.length > 25 ? "font-size: 14px" : "font-size: 16px"%>" ><%= dl.title %></a>
                     </div>
-                    <div class="spacer" data-desktop_height="8" data-mobile_height="8" data-smobile_height="8"></div>
-                    <div class="widget widget-text">
-                        <a href="/pdf/ISO-3834_2018-1.5-MB_1.-strana-sertifikata.pdf" class="download bg-green hvr-shutter-out-vertical" >EN ISO 3834-2</a>
-                    </div>
-
                 </div>
-                <div class="spacer" data-desktop_height="0" data-mobile_height="50" data-smobile_height="0"></div>
             </div>
+            <% })} %>
+        </div>
+        <div className="row " style="display: flex; justify-content: center" >
+            <% if(data) { data.slice(4,8).forEach( dl => { %>
 
-            <div class="hidden-lg hidden-md col-sm-12">
-                <div class="sidebar-wrap sidebar">
-
-                    <div class="spacer" data-desktop_height="30" data-mobile_height="30" data-smobile_height="30"></div>
-                    <div class="widget widget-text">
-                        <a href="/pdf/Todebo-QMS-en.pdf" class="download hvr-shutter-out-verticall" >ISO 9001:2015</a>
+                <div class="col-lg-3 col-md-3 col-sm-12 marg ">
+                    <div class="sidebar-wrap sidebar">
+                        <div class="widget widget-text">
+                            <a href="/pdf/<%= dl.filename %>" class="download bg-green hvr-shutter-out-vertical" style="<%= dl.title.length > 25 ? "font-size: 14px" : "font-size: 16px"%>" ><%= dl.title %></a>
+                        </div>
                     </div>
-                    <div class="spacer" data-desktop_height="8" data-mobile_height="8" data-smobile_height="8"></div>
-                    <div class="widget widget-text">
-                        <a href="/pdf/ISO-3834_2018-1.5-MB_1.-strana-sertifikata.pdf" class="download bg-green hvr-shutter-out-vertical" >EN ISO 3834-2</a>
-                    </div>
-
                 </div>
-                <div class="spacer" data-desktop_height="0" data-mobile_height="50" data-smobile_height="0"></div>
-            </div>
-
-            <div class="col-lg-3 col-md-3 col-sm-12">
-                <div class="sidebar-wrap sidebar">
-
-                    <div class="spacer" data-desktop_height="30" data-mobile_height="30" data-smobile_height="30"></div>
-                    <div class="widget widget-text">
-                        <a href="/pdf/Todebo-EMS-en.pdf" class="download hvr-shutter-out-verticall" >ISO 14001:2015</a>
-                    </div>
-                    <div class="spacer" data-desktop_height="8" data-mobile_height="8" data-smobile_height="8"></div>
-                    <div class="widget widget-text">
-                        <a href="/pdf/WPQR-0036-SRB-18-05-219-001-1.pdf" class="download bg-green hvr-shutter-out-vertical" >WPQR 0036</a>
-                    </div>
-
-                </div>
-                <div class="spacer" data-desktop_height="0" data-mobile_height="50" data-smobile_height="0"></div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-12">
-                <div class="sidebar-wrap sidebar">
-
-                    <div class="spacer" data-desktop_height="30" data-mobile_height="30" data-smobile_height="30"></div>
-                    <div class="widget widget-text">
-                        <a href="/pdf/Todebo-OHSAS-en.pdf" class="download hvr-shutter-out-verticall" >OHSAS 18001:2015</a>
-                    </div>
-                    <div class="spacer" data-desktop_height="8" data-mobile_height="8" data-smobile_height="8"></div>
+            <% })} %>
 
 
-                </div>
-                <div class="spacer" data-desktop_height="0" data-mobile_height="50" data-smobile_height="0"></div>
-            </div>
         </div>
     </div>
 </div>
 
 <% include partials/footer.ejs %>
 
-<div id="scroll-top"><i class="fa fa-angle-up"></i></div>
+<div id="scroll-top">▲</div>
 <% include partials/footerscripts.ejs %>
 </body>
 </html>

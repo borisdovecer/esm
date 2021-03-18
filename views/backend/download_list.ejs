@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../partials/head.ejs%>
+</head>
+<body>
+
+<% include ../partials/header2.ejs %>
+<div class="main-blog-single" style="padding-top: 50px">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-12">
+                <% include sidebar.ejs %>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-12">
+                <h1>Download list</h1>
+                <a href="/admin/downloads/create" class="download hvr-shutter-out-verticall contactbtn" style="line-height: 45px">Create</a>
+                <div class="themesflat_sc_vc-table table-responsive tb-text-left">
+                    <table class="table table-simple darkbluehover">
+                        <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Filename</th>
+                            <th>Category</th>
+                            <th>Lang</th>
+                            <th>Delete</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <% if(data){ data.forEach( a => { %>
+                            <tr>
+                                <td><a href="/admin/downloads/update/<%= a._id %>"><%= a.title %></a></td>
+                                <td><%= a.filename %></td>
+                                <td><%= a.category %></td>
+                                <td><%= a.lang %></td>
+                                <td>
+                                    <form method="post" action="/admin/downloads/delete/<%= a._id %>" >
+                                        <input type="submit" name="delete" value='Delete' onClick="return confirm('Are you sure you want to delete?')" />
+                                        <input type="hidden" name="_method" value="DELETE" />
+                                    </form>
+                                </td>
+                            </tr>
+                        <% })} %>
+
+                        </tbody>
+                    </table>
+                    <div class="col-lg-12 col-md-12 col-sm-12 ">
+                        <div class="blog-pagination"  style="text-align: left">
+                            <ul>
+                                <% if(parseInt(current) !== 1) {    %>
+                                    <a href="/admin/downloads?page=<%= parseInt(current) - 1%>">
+                                        <li> < </li>
+                                    </a>
+                                <% } %>
+
+                                <% if(pages){ %>
+                                    <% for( i=1; i<=pages; i++ ) { %>
+                                        <a href="/admin/downloads?page=<%= i %>">
+                                            <li class="<%= current === i ? "active" : "" %>"><%= i %></li>
+                                        </a>
+                                <% }} %>
+                                <% if(parseInt(current) !== pages) {    %>
+                                    <a href="/admin/downloads?page=<%= parseInt(current) + 1%>">
+                                        <li> > </li>
+                                    </a>
+                                <% } %>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer.ejs %>
+
+<div id="scroll-top"><i class="fa fa-angle-up"></i></div>
+<% include ../partials/footerscripts.ejs %>
+</body>
+</html>

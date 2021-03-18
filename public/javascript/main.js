@@ -1,35 +1,3 @@
-/**
-* inViewport
-* flatPrice
-* flatCounter
-* tabs
-* flatFilterBox
-* flatIsotope
-* searchIcon
-* goTop
-* VideoPopup
-* countDownTime
-* googleMap
-* responsiveMenu
-* headerFixed
-* flatImagePopup
-* inViewport
-* zoomPic
-* flatGallery
-* ajaxContactForm
-* flatProgressBar
-* accordionToggle
-* contentBox
-* spacer
-* flatFilterPrice
-* canvasMobi
-* testimonialCarousel
-* flatRetinaLogo
-* flatOwl
-* parallax
-* inViewport
-* removePreloader  
-*/
 
 ;(function($) {
     "use strict";
@@ -68,22 +36,7 @@
             }, 100);
         });
     };
-    
-    var flatCounter = function() {
-        if ( $().countTo ) {
-            $('.counter').on('on-appear', function() {
-                $(this).find('.numb-count').each(function() {
-                    var to = $(this).data('to'),
-                        speed = $(this).data('speed');
-                        
-                    $(this).countTo({
-                        to: to,
-                        speed: speed
-                    });
-                });
-            });
-        }
-    };
+
 
     var flatOwl = function() {
         if ( $().owlCarousel ) {
@@ -96,7 +49,7 @@
                 item3 = $this.data("column3"),
                 gap = Number($this.data("gap")),
                 dots = $this.data("dots"),
-                nav = $this.data("nav");               
+                nav = $this.data("nav");
 
                 $this.find('.owl-carousel').owlCarousel({
                     margin: gap,
@@ -123,30 +76,6 @@
         }
     };
 
-
-    var flatIsotope = function() {
-        if($().isotope) {
-            var $container = $('.project-wrap');
-            $container.imagesLoaded(function(){
-                $container.isotope({
-                    itemSelector: '.project-inner',
-                    transitionDuration: '1s',
-                    layoutMode: 'fitRows'
-                });
-            });
-
-            $('.flat-filter li').on('click',function() {                           
-                var selector = $(this).find("a").attr('data-filter');
-                $('.flat-filter li').removeClass('active');
-                $(this).addClass('active');
-                $container.isotope({ filter: selector });
-                return false;
-            });
-        };
-    };
-
-
-   
     var googleMap = function () {
         // gmap default
         if ($().gmap3) {
@@ -312,92 +241,19 @@
                 }
             });
         });
-    };    
-    
-    var searchIcon = function () {
-        $(document).on('click', function(e) {   
-            var clickID = e.target.id;   
-            if ( ( clickID !== 'input-search' ) ) {
-                $('.header-search-form').removeClass('show');                
-            } 
-        });
-
-        $('.header-search-icon').on('click', function(event){
-            event.stopPropagation();
-        });
-
-        $('.header-search-form').on('click', function(event){
-            event.stopPropagation();
-        });        
-
-        $('.header-search-icon').on('click', function (event) {
-            if(!$('.header-search-form').hasClass( "show" )) {
-                $('.header-search-form').addClass('show');  
-                event.preventDefault();                
-            }
-                
-            else
-                $('.header-search-form').removeClass('show');
-                event.preventDefault();
-
-        });
     };
 
-    var tabs = function() {
-        $('.flat-tabs').each(function() {
-            $(this).children('.content-tab').children().hide();
-            $(this).children('.content-tab').children().first().show();
-            $(this).find('.menu-tab').children('li').on('click', function(e) {
-                var liActive = $(this).index(),
-                    contentActive = $(this).siblings().removeClass('active').parents('.flat-tabs').children('.content-tab').children().eq(liActive);
-                contentActive.addClass('active').fadeIn('slow');
-                contentActive.siblings().removeClass('active');
-                $(this).addClass('active').parents('.flat-tabs').children('.content-tab').children().eq(liActive).siblings().hide();
-                e.preventDefault();
-            });
-        });
-    };
 
-    var flatPrice = function() {
-        if( $().slider ) {
-            $( function() {
-                $( "#slide-range" ).slider({
-                  range: true,
-                  min: 0,
-                  max: 120,
-                  values: [ 30, 120 ],
-                  slide: function( event, ui ) {
-                    $( "#amount" ).html( "$" + ui.values[ 0 ]  + " - " + "$" + ui.values[ 1 ] );
-                  }
-                });
-                $( "#amount" ).html( $( "#slide-range" ).slider( "values", 0 ) + "$" + " - " + $( "#slide-range" ).slider( "values", 1 ) + "$" );
-            });
-        }
-    };
-
-    var flatFilterBox = function(){
-        $('.box-filter').hide();
-        $('.show-filter').on('click',function(){
-            $('.box-filter').slideToggle(1000);
-            $('.filter-shop li.filter-list').toggleClass('active');
-            $(this).toggleClass('active');
-        });
-        $('.box-filter .btn-close').on('click',function(){
-            $('.box-filter').slideToggle(1000);
-            $('.show-filter').removeClass('active');
-            $('.filter-shop li.filter-list').removeClass('active');
-        });
-    };
 
     var headerFixed = function() {
         $('#header').each(function() {
             var nav = $('#header');
             $(window).on('load', function(){
-                var header = $('#header');           
+                var header = $('#header');
                 var offsetTop = $('#header').offset().top;
-                var headerHeight = $('#header').height();             
-                var buffer  = $('<div>', { height: headerHeight }).insertAfter(header);   
-                    buffer.hide();                 
+                var headerHeight = $('#header').height();
+                var buffer  = $('<div>', { height: headerHeight }).insertAfter(header);
+                    buffer.hide();
 
                 $(window).on('load scroll', function(){
                     if ( $(window).scrollTop() > offsetTop  ) {
@@ -449,7 +305,7 @@
             }
         });
 
-        $('.mobile-button').on('click', function() {         
+        $('.mobile-button').on('click', function() {
             $('#mainnav-mobi').slideToggle(300);
             $(this).toggleClass('active');
         });
@@ -460,49 +316,6 @@
         });
     };
 
-    var countDownTime =function () {
-        $(".count-time").each(function() {
-            var day = $(".count-time").data("day"),
-                month = $(".count-time").data("month")-1,
-                year = $(".count-time").data("year"),
-                hour = $(".count-time").data("hour"),
-                minute = $(".count-time").data("minute"),
-                second = $(".count-time").data("second");
- 
-            var countDownDate = new Date(year,month,day,hour,minute,second).getTime();
-
-            // Update the count down every 1 second
-            var x = setInterval(function() {
-
-                // Get todays date and time
-                var now = new Date().getTime();
-
-                // Find the distance between now and the count down date
-                  var distance = countDownDate - now;
-
-                // Time calculations for days, hours, minutes and seconds
-                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                // Display the result in the element with id="demo"
-                $(".days .numb").html(days);
-                $(".hours .numb").html(hours);
-                $(".minutes .numb").html(minutes);
-                $(".seconds .numb").html(seconds);
-
-                // If the count down is finished, write some text 
-                if (distance < 0) {
-                    clearInterval(x);
-                    $(".days .numb").html("0");
-                    $(".hours .numb").html("0");
-                    $(".minutes .numb").html("0");
-                    $(".seconds .numb").html("0");
-                }
-            }, 1000);
-        });
-    };
 
     var goTop =  function() {
         $(window).scroll(function() {
@@ -519,38 +332,7 @@
         });
     };
 
-    var flatImagePopup = function(){
-        if($().magnificPopup) {
-            $('.flat-icon').each(function(){
-                $(this).find('.zoom-popup').magnificPopup({
-                    disableOn: 700,
-                    type: 'image',
-                    gallery:{
-                        enabled: true
-                    },
-                    mainClass: 'mfp-fade',
-                    removalDelay: 160,
-                    preloader: false,
-                    fixedContentPos: true
-                });
-            });
-        };
-    };
-
-    var zoomPic  = function(){
-        $('.zoom-pic').each(function(){
-            $('.zoom-pic').fancybox();
-        });
-    };
-
-    var VideoPopup =  function() {
-        $(".fancybox").on("click", function(){
-            $.fancybox({ href: this.href, type: $(this).data("type") });
-                return false   
-        });
-    };    
-
-    var ajaxContactForm = function() {  
+    var ajaxContactForm = function() {
         $('#contactform').each(function() {
             $(this).validate({
                 submitHandler: function( form ) {
@@ -566,8 +348,8 @@
                             $form.find('.form-submit').append(loading);
                         },
                         success: function( msg ) {
-                            var result, cls;                            
-                            if ( msg === 'Success' ) {                                
+                            var result, cls;
+                            if ( msg === 'Success' ) {
                                 result = 'Message Sent Successfully To Email Administrator. ( You can change the email management a very easy way to get the message of customers in the user manual )';
                                 cls = 'msg-success';
                             } else {
@@ -595,99 +377,13 @@
         }); // each contactform
     };
 
-    var flatGallery = function() {
-        if ( $().owlCarousel ) {
-            $('.themesflat-gallery').each(function(){
-                var
-                $this = $(this),
-                auto = $this.data("auto"),
-                item = $this.data("column"),
-                item2 = $this.data("column2"),
-                item3 = $this.data("column3"),
-                gap = Number($this.data("gap"));
 
-                $this.find('.owl-carousel').owlCarousel({
-                    margin: gap,
-                    nav: false,
-                    thumb: true,
-                    dots:false,
-                    thumbImage: true,
-                    navigation : false,
-                    pagination: false,
-                    autoplay: auto,
-                    autoplayTimeout: 5000,
-                    responsive: {
-                        0:{
-                            items:item3
-                        },
-                        600:{
-                            items:item2
-                        },
-                        1000:{
-                            items:item
-                        }
-                    }
-                });
-            });
-        }
-    };  
-
-    var flatProgressBar = function() {
-        if ( $().waypoint ) {
-            $('.progress-bg').on('on-appear', function() {
-                $(this).each(function() {
-                    var percent = parseInt($(this).data('percent'));
-
-                    $(this).find('.progress-animate').animate({
-                        "width": percent + '%'
-                    },1000, "easeInCirc");
-
-                    $(this).parent('.themesflat-progress').find('.perc').addClass('show').animate({
-                        "width": percent + '%'
-                    },1000, "easeInCirc");
-                });
-            });
-        }
-    };
-
-    var accordionToggle = function() {
-        $('.flat-question').each(function () {
-            var speed = {duration: 400};
-            $('.flat-question .toggle-content').hide();
-            $('.flat-question .accordion-toggle .toggle-title.active').siblings('.toggle-content').show();
-            $('.flat-question .accordion').find('.toggle-title').on('click', function() {
-                $(this).toggleClass('active');
-                $(this).closest('.accordion').find('.accordion-toggle').removeClass('active');
-                $(this).closest('.accordion-toggle').toggleClass('active');
-                $(this).next().slideToggle(speed);
-                $(".flat-question .toggle-content").not($(this).next()).slideUp(speed);
-                if ($(this).is('.active')) {
-                    $(this).closest('.accordion').find('.toggle-title.active').toggleClass('active');
-                    $(this).toggleClass('active');
-                };
-            });
-        });
-    };
-
-    var flatCounter = function() {
-        $('.counter').on('on-appear', function() { 
-            $(this).find('.numb-count').each(function() { 
-                var to = parseInt( ($(this).attr('data-to')),10 ), speed = parseInt( ($(this).attr('data-speed')),10 );
-                if ( $().countTo ) {
-                    $(this).countTo({
-                        to: to,
-                        speed: speed
-                    });
-                }
-            });
-       });
-    };
 
     var parallax = function() {
         if ( $().parallax && isMobile.any() === null ) {
-            $('.parallax1').parallax("50%", -0.65); 
-            $('.parallax2').parallax("50%", 0); 
-            $('.parallax3').parallax("50%", -0.5); 
+            $('.parallax1').parallax("50%", -0.65);
+            $('.parallax2').parallax("50%", 0);
+            $('.parallax3').parallax("50%", -0.5);
             $('.parallax4').parallax("50%", -0.5);
             $('.parallax5').parallax("50%", -0.5);
             $('.parallax6').parallax("50%", -0.5);
@@ -720,11 +416,11 @@
                     padding =  $this.data( 'smobile_padding' );
                     margin =  $this.data( 'smobile_margin' );
                 }
-                
+
                 $this.css({ "padding" : padding , "margin" : margin });
             });
-        });        
-    }; 
+        });
+    };
 
     var spacer = function() {
         $(window).on("load resize", function () {
@@ -790,46 +486,6 @@
         });
     }
 
-    var testimonialCarousel = function() {   
-        $(".themesflat-testimonials-slider").each(function(){
-            var $this = $(this);
-            $this.find(".testimonial-content").each(function(){
-                
-                var $_this = $(this);
-                var a = "<li>"+$_this.html()+"</li>";
-                $_this.html('');
-                $this.find('#slider-testimonial .slides').append(a);  
-            })
-            $('#nav-testimonial').flexslider({
-                animation: "slide",
-                controlNav: false,
-                animationLoop: false,
-                slideshow: false,
-                itemWidth: 130,
-                directionNav:false,
-                itemMargin: 21,
-                asNavFor: '#slider-testimonial'
-            });
-
-            $('#slider-testimonial').each(function () {
-                var $this = $(this),nav,dots;
-                nav = $this.data('nav');
-                dots = $this.data('dots');
-
-                $('#slider-testimonial').flexslider({
-                    animation: "slide",
-                    controlNav:dots ,
-                    animationLoop: false,
-                    slideshow: false,
-                    directionNav:nav,
-                    sync: "#nav-testimonial",
-                    prevText: '<i class="fa fa-angle-left" aria-hidden="true"></i>',
-                    nextText: '<i class="fa fa-angle-right" aria-hidden="true"></i>'
-                });
-            });            
-        })
-    }; 
-
     var flatRetinaLogo = function() {
         var retina = window.devicePixelRatio > 1 ? true : false;
         var $logo = $('#logo img');
@@ -841,48 +497,33 @@
                 width: $logo.data('width'),
                 height: $logo.data('height')
             });
-        } 
+        }
     };
 
-    var removePreloader = function() {        
-        $(window).on("load", function () {
-            if($('.preloader').length){
-                $('.preloader').delay(400).fadeOut(600);
-            }
-        });
-    };
 
     $(function() {
-        flatPrice();        
-        flatCounter();
-        tabs();        
-        flatFilterBox();
-        flatIsotope();
-        searchIcon();
+
         goTop();
-        VideoPopup();
-        countDownTime();
+
+
         googleMap();
         responsiveMenu();
         headerFixed();
-        flatImagePopup();
+
         inViewport();
-        zoomPic();
-        flatGallery();
+
         ajaxContactForm();        
-        flatProgressBar();
-        accordionToggle();
+
         contentBox();
         spacer();
         flatFilterPrice();
         canvasMobi();
-        testimonialCarousel();
+
         flatRetinaLogo();
         $( window ).on( "load", function() {
             flatOwl();
             parallax();
             inViewport();
         });
-        removePreloader();        
     });
 })(jQuery);
